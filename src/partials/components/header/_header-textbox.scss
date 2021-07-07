@@ -1,0 +1,34 @@
+.textbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    text-align: center;
+    .textbox__content{
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: auto;
+        .textbox__heading{
+            font-size: 6rem;
+            letter-spacing: 3.5rem;
+            animation: moveToLeft 1s ease-out; 
+        }
+        .textbox__subheading{
+            font-size: 2rem;
+            letter-spacing: 1.75rem;
+            margin-bottom: 4rem;
+            animation: moveToRight 1s ease-out; 
+            color: #FFFFFF;
+        }
+        .textbox__btn{
+            background-color: #FFFFFF; 
+            color: #777777;
+            &::after{
+                background-color: #FFFFFF;
+            }
+            animation: moveToBtn .5s ease-out .75s;
+            animation-fill-mode: backwards;
+        }
+    }
+}

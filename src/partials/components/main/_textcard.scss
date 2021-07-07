@@ -1,0 +1,47 @@
+.textcard{
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+    &__heading{
+        font:{
+            size: 1.6rem;
+            weight: 700;
+        }
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        color: $text_color;
+    }
+    &__desc{
+        font:{
+            size: 1.5rem;
+            weight: 400;
+        }
+        color: #666666;
+    }
+}
+.textcard__btn{
+    &:link,
+    &:visited{
+        color: $medium_green;
+        font:{
+            size: 1.6rem;
+            weight: 600;
+        }
+        text:{
+            decoration: none;
+        }
+        padding: .3rem;
+        border-bottom: 1px solid $medium_green;
+        transition: all .2s;
+    }
+    &:hover{
+        background-color: $medium_green;
+        color: $theme_default_color;
+        box-shadow: 0 1rem 2rem rgba($text_color, .15);
+        transform: translateY(-.2rem);
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($text_color, .15);
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,96 @@
+.txtbox{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($text_color, .1);
+    background-color: rgba($theme_white_color, .6);
+    border-radius: .3rem;
+    padding: 6rem;
+    transform: skewX(-12deg);
+    & > * {
+        transform: skewX(12deg);
+    }
+    &__img{
+        width: 15rem;
+        height: 15rem;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        float: left;
+        margin-left: 3rem;
+        transform: translateX(-3rem) skewX(12deg);
+        img{
+            height: 100%;
+            transform: translateX(-4rem) scale(1.5);
+            backface-visibility: hidden;
+            transition: all .3s;
+        }
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        font:{
+            size: 1.7rem;
+            weight: 600;
+        }
+        color: $theme_white_color;
+        text:{
+            transform: uppercase;
+            align: center;
+        }
+        opacity: 0;
+        transition: all .3s ease-out;
+        backface-visibility: hidden;
+    }
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    &:hover &__img{
+        img{
+            transform: translateX(-4rem) scale(1);
+            filter: blur(.4rem) brightness(80%);
+        }
+    }
+    &__btn{
+        &:link,
+        &:visited{
+            color: $medium_green;
+            font:{
+                size: 1.6rem;
+                weight: 600;
+            }
+            text:{
+                decoration: none;
+            }
+            padding: .3rem;
+            border-bottom: 1px solid $medium_green;
+            transition: all .2s;
+            display: block;
+            max-width: 11%;
+            margin: 10rem auto 0;
+            //padding: 15rem 0;
+        }
+        &:hover{
+            background-color: $medium_green;
+            color: $theme_default_color;
+            box-shadow: 0 1rem 2rem rgba($text_color, .15);
+            transform: translateY(-.2rem);
+        }
+        &:active{
+            box-shadow: 0 .5rem 1rem rgba($text_color, .15);
+            transform: translateY(0);
+        }
+    }
+    &__content{
+
+    }
+    &__heading{
+
+    }
+    &__desc{
+
+    }
+}

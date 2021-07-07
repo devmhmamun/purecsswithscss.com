@@ -1,0 +1,112 @@
+.booking{
+    background-image: linear-gradient(105deg, rgba($theme_white_color, .9) 0%, rgba($theme_white_color, .9) 50%, transparent 50% ), url("../assets/images/booking/nat-10.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: .3rem;
+    box-shadow: 0 1.6rem 4rem rgba($text_color, .15);
+    &__form{
+        width: 50%;
+        padding: 6rem;
+    }
+    &__heading{
+        margin: 0 0 4rem 0 !important;
+        text-align: left;
+    }
+    &__group:not(:last-child){
+        margin-bottom: 2rem;
+    }
+    &__input{
+        font:{
+            family: lato;
+            size: 1.4rem;
+            weight: 400;
+        }
+        text:{
+            transform: normal;
+        }
+        padding: 1.6rem 2rem;
+        border: none;
+        border-radius: .2rem;
+        border-bottom: .3rem solid transparent;
+        width: 90%;
+        display: block;
+        &:focus{
+            outline: none;
+            border-bottom: .3rem solid $medium_green;
+            box-shadow: 0 1rem 2rem rgba($text_color, .1);
+            &:invalid{
+                border-bottom: .3rem solid $color_orange_dark;
+            }
+        }
+        &::-webkit-input-placeholder{
+            color: rgba($text_color, .9);
+        }
+        transition: all .3s;
+    }    
+    &__label{
+        font:{
+            family: lato;
+            size: 1.4rem;
+            weight: 400;
+        }
+        text:{
+            transform: normal;
+        }
+        margin: .7rem 0 0 2rem;
+        display: block;
+        transition: all .3s;
+    }
+    &__input:placeholder-shown + &__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &-radio-btn{
+        width: 48%;
+        display: inline-block;
+        &__input{
+            display: none;
+        }
+        &__label{
+            font:{
+                size: 1.6rem;
+            }
+            cursor: pointer;
+            position: relative;
+            padding-left: 5rem;
+        }
+        &__style{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: .5rem solid $medium_green;
+            display: inline-block;
+            position: absolute;
+            top: -.6rem;
+            left: 0;
+            &::after{
+                content: "";
+                display: inline-block;
+                background-color: $medium_green;
+                width: 1.3rem;
+                height: 1.3rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+        &__input:checked ~ &__label &__style::after{
+            opacity: 1;
+            transition: opacity .3s;
+        }
+    }
+    &__btn{
+        background-color: $medium_green;
+        color: $theme_white_color;
+        margin-top: 4rem;
+    }
+}

@@ -1,0 +1,19 @@
+h3{
+    font:{
+        size: 1.6rem;
+        weight: 600;
+    }
+    text-transform: uppercase;
+    line-height: 1.9;
+    color: rgba($text_color, .9);
+}
+
+p{
+    font:{
+        size: 1.4rem;
+        weight: 400;
+    }
+    text-transform: normal;
+    line-height: 1.9;
+    color: rgba($text_color, .9);
+}

@@ -1,0 +1,46 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        text:{
+            transform: uppercase;
+            decoration: none;
+        }
+        padding: 1.5rem 3rem;
+        display: inline-block;
+        border-radius: 4.5rem;
+        position: relative;
+        transition: all .3s;
+        font-size: 1.6rem;
+
+        //change for the form button
+        border: none;
+        cursor: pointer;
+    }
+    &:hover{
+        transform: translateY( -.3rem );
+        box-shadow: 0 1rem 2rem rgba( 0, 0, 0, .2 );
+        &::after{
+            transform: scaleX( 1.4 ) scaleY( 1.6 );
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus{
+        outline: none;
+        transform: translateY( -.1rem );
+        box-shadow: 0 .5rem 1rem rgba( 0, 0, 0, .2 );
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 4.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .4s;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,154 @@
+.cardbox{
+    height: 50rem;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    &__side{
+        width: 100%;
+        height: 50rem;
+        color: #FFFFFF;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        border-radius: .3rem;
+        box-shadow: 0 1.5rem 4rem rgba($text_color, .15);
+        overflow: hidden;
+        &--front{
+            background-color: $theme_white_color;
+        }
+        &--back{
+            transform: rotateY(180deg);
+            &-01{
+                background-image: linear-gradient(to right bottom, $color_orange_light, $color_orange_dark);
+            }
+            &-02{
+                background-image: linear-gradient(to right bottom, $light_overlay_color, $dark_overlay_color);
+            }
+            &-03{
+                background-image: linear-gradient(to right bottom, $color_blue_light, $color_blue_dark);
+            }
+        }
+    }
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+    &__img{
+        background-size: cover;
+        height: 25rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--01{ 
+            background-image: linear-gradient(to right bottom, $color_orange_light, $color_orange_dark), url(../assets/images/cardbox/nat-5.jpg);
+        }
+        &--02{
+            background-image: linear-gradient(to right bottom, $light_overlay_color, $dark_overlay_color), url(../assets/images/cardbox/nat-5.jpg);
+        }
+        &--03{
+            background-image: linear-gradient(to right bottom, $color_blue_light, $color_blue_dark), url(../assets/images/cardbox/nat-5.jpg);
+        }
+    }
+    &__heading{
+        width: 65%;
+        position: absolute;
+        top: 12.8rem;
+        right: 0;
+        margin: 1rem 1.5rem;
+        font:{
+            size: 2.8rem;
+            weight: 400;
+        }
+        text:{
+            align: right;
+            transform: uppercase;
+        }
+        color: $theme_white_color;
+        &--01{
+            background-image: linear-gradient(to right bottom, rgba($color_orange_light, .85), rgba($color_orange_dark, 85));
+            padding: 0 .5rem;
+            -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+        }
+        &--02{
+            background-image: linear-gradient(to right bottom, rgba($light_overlay_color, .85), rgba($dark_overlay_color, 85));
+            padding: 0 .5rem;
+            -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+        }
+        &--03{
+            background-image: linear-gradient(to right bottom, rgba($color_blue_light, .85), rgba($color_blue_dark, 85));
+            padding: 0 .5rem;
+            -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+        }
+    }
+    &__details{
+    }
+    &__list{
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__item{
+        text-align: center;
+        font-size: 1.6rem;
+        padding: 1rem;
+        color: $text_color;
+        &:not(:last-child){
+            border-bottom: 1px solid $theme_default_color;
+        }
+    }
+
+
+
+
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__content{
+        text-align: center;
+        margin: 0 0 6rem 0;
+    }
+    &__text{
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    &__price{
+        font-family: lato;
+        font-size: 6rem;
+        font-weight: 200;
+    }
+    &__btn{
+        &--center{    
+            width: 25%;
+            display: block;
+            margin: 0 auto;
+        }
+        &--style{
+            background-color: #FFFFFF; 
+            color: #777777;
+            &::after{
+                background-color: #FFFFFF;
+            }
+            animation: moveToBtn .5s ease-out .75s;
+            animation-fill-mode: backwards;
+        }
+    }
+    &__link{
+        background-image: linear-gradient(to right bottom, rgba($light_overlay_color, .85), rgba($dark_overlay_color,
+        85));
+        color: $theme_white_color;
+    }
+}
+
+
+
+
